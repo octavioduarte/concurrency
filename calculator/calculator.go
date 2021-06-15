@@ -29,11 +29,12 @@ func generateNumber() (int, int) {
 func printCalc() {
 	n1, n2 := generateNumber()
 	fmt.Printf("[PROCCESS 1 - CALCULATOR] Result: %v + %v =  %v \n", n1, n2, n1+n2)
-	fmt.Printf("---------------------------------------- \n")
+	fmt.Printf("------------------------------------------------------------------- \n")
 }
 
 func LoopCalcs() {
-	for x := 0; x < 15; x++ {
+	for x := 0; x < 10; x++ {
 		printCalc()
+		time.Sleep(1 * time.Second)
 	}
 }
