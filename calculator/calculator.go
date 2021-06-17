@@ -3,6 +3,7 @@ package calculator
 import (
 	"fmt"
 	"math/rand"
+	"sync"
 	"time"
 )
 
@@ -32,7 +33,8 @@ func printCalc() {
 	fmt.Printf("------------------------------------------------------------------- \n")
 }
 
-func LoopCalcs() {
+func LoopCalcs(wg *sync.WaitGroup) {
+	defer wg.Done()
 	for x := 0; x < 10; x++ {
 		printCalc()
 		time.Sleep(1 * time.Second)
